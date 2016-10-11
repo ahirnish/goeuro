@@ -1,0 +1,32 @@
+package com.goeuro.busRouteChallenge;
+
+import io.dropwizard.Application;
+import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.Environment;
+import com.goeuro.busRouteChallenge.resources.busRouteResource;
+
+public class busRouteApplication extends Application<busRouteConfiguration> {
+
+    public static void main(final String[] args) throws Exception {
+        new busRouteApplication().run(args);
+    }
+
+    @Override
+    public String getName() {
+        return "busRoute";
+    }
+
+    @Override
+    public void initialize(final Bootstrap<busRouteConfiguration> bootstrap) {
+        // TODO: application initialization
+    }
+
+    @Override
+    public void run(final busRouteConfiguration configuration,
+                    final Environment environment) {
+        // TODO: implement application
+	final busRouteResource resource = new busRouteResource( configuration.getPath() )
+	environment.jersey().register(resource);
+    }
+
+}

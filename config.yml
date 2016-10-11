@@ -1,0 +1,14 @@
+logging:
+  level: INFO
+  loggers:
+    com.goeuro: DEBUG
+
+path : /usr
+
+server:
+  applicationConnectors:
+  - type: http
+    port: 8088
+  adminConnectors:
+  - type: http
+    port: 8089

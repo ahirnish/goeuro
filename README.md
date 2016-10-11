@@ -3,12 +3,6 @@
 How to start the busRoute application
 ---
 
-1. Run `mvn clean install` to build your application
-1. Start application with `java -jar target/busRoute-1.0-SNAPSHOT.jar server config.yml`
-1. To check that your application is running enter url `http://localhost:8080`
-
-Health Check
----
-
-To see your applications health enter url `http://localhost:8081/healthcheck`
-# goeuro
+1. Run `bash build.sh` to build your application
+2. Start application with `bash service.sh start <DATA_FILE>`
+3. To check that your application is running enter url `http://localhost:8088?dep_sid={}&arr_sid={}`
